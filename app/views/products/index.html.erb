@@ -1,5 +1,13 @@
 <div id="product_list">
   <h1>Listing products</h1>
+
+   <% form_tag products_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search_query, params[:search_query] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+  <% end %>
+
   <table>
     <% @products.each do |product| %>
         <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -8,7 +16,7 @@
           </td>
 
           <td class="list_author">
-          <%= product.author %>
+            <%= product.author %>
           </td>
 
 
@@ -18,6 +26,9 @@
               <dd><%= truncate(strip_tags(product.description),
                                :length => 80) %></dd>
             </dl>
+          </td>
+          <td class="list_price">
+            <%= product.price %>
           </td>
           <td class="list_actions">
             <%= link_to 'Show', product %>
@@ -31,6 +42,8 @@
         </tr>
     <% end %>
   </table>
+
+
 </div>
 <br/>
 <%= link_to 'New product', new_product_path %>

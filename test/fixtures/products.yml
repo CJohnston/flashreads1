@@ -17,3 +17,16 @@ two:
   image_url: MyString
   price: 9.99
   file_link: MyString
+
+
+ruby:
+title:  The Heroes
+author:  Joe Abercrombie
+description:
+   From Amazon.com Review This blood-drenched, thought-provoking dissection
+   of a three-day battle is set in the same world as Abercrombie's First Law Trilogy
+   (The Blade Itself, etc.), but stands very well alone.
+genre: War
+price: 6.99
+image_url: JoeAberHeroes.jpg
+file_link: Ebook _Title1.zip

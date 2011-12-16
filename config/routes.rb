@@ -1,5 +1,17 @@
 Flashreads::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
+  get "store/index"
+
+  get "welcome/home"
+
   resources :products
+
+
+  match '/your_cart' => "carts#your_cart", :as => "your_cart"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +62,7 @@ Flashreads::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+   root :to => "store#index", :as => 'store'
 
   # See how all your routes lay out with "rake routes"
 
